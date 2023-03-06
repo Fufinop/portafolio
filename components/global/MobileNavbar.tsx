@@ -22,17 +22,19 @@ export default function MobileNavbar() {
 	return (
 		<nav className='relative'>
 			<div className='flex items-center justify-between p-5 bg-bg z-10'>
-				<li className='list-none font-bold text-lg'>
-					<Link href='/'>
-						<Image
-							alt='logo'
-							className='mr-3'
-							src='/static/logos/logo_full.svg'
-							width='160'
-							height='160'
-						/>
-					</Link>
-				</li>
+				<ul>
+					<li className='list-none font-bold text-lg'>
+						<Link href='/'>
+							<Image
+								alt='logo'
+								className='mr-3'
+								src='/static/logos/logo_full.svg'
+								width='160'
+								height='160'
+							/>
+						</Link>
+					</li>
+				</ul>
 				<button
 					className='burger visible md:hidden'
 					aria-label='Toggle menu'
