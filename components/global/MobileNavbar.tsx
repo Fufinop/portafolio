@@ -28,9 +28,9 @@ export default function MobileNavbar() {
 							<Image
 								alt='logo'
 								className='mr-3'
-								src='/static/logos/logo_full.svg'
-								width='160'
-								height='160'
+								src='/static/logos/logo_no_text.svg'
+								width='60'
+								height='60'
 							/>
 						</Link>
 					</li>
