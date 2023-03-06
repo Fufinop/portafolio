@@ -51,10 +51,11 @@ function Footer() {
 					<div className='space-y-2 mt-4 w-full flex items-center sm:items-start flex-col'>
 						{footer.support.buymeacoffee !== '' && (
 							<div className='w-full flex justify-center'>
-								<a
+								<Link
 									className='text-center flex justify-center items-center'
 									href={`https://buymeacoffee.com/${footer.support.buymeacoffee}`}
-									target='_blank'>
+									target='_blank'
+									rel='noreferrer'>
 									<Image
 										alt='Buy me a coffee'
 										src='/static/misc/buy-me-a-coffee.svg'
@@ -62,14 +63,15 @@ function Footer() {
 										width={220}
 										height={220}
 									/>
-								</a>
+								</Link>
 							</div>
 						)}
 						{footer.support.paypal !== '' && (
 							<div className='w-full flex justify-center'>
-								<a
+								<Link
 									href={`https://paypal.me/${footer.support.paypal}`}
-									target='_blank'>
+									target='_blank'
+									rel='noreferrer'>
 									<Image
 										alt='Paypal'
 										src='/static/misc/paypal.svg'
@@ -77,7 +79,7 @@ function Footer() {
 										width={220}
 										height={220}
 									/>
-								</a>
+								</Link>
 							</div>
 						)}
 						<p className='text-fun-gray text-xs pt-1 text-center w-full'>
@@ -136,7 +138,7 @@ function Footer() {
 				</section>
 			</div>
 			<div className='mt-8 text-center sm:text-right sm:-mt-12'>
-				<a
+				<Link
 					className='w-auto inline-flex items-center sm:w-auto font-bold flex-shrink text-xs border border-fun-pink px-4 py-2 rounded-xl text-fun-pink cursor-pointer opacity-50'
 					href='https://github.com/Fufinop/Fufinop.github.io'
 					target='_blank'
@@ -148,7 +150,7 @@ function Footer() {
 						alt='Github Icon'
 					/>
 					<span className='ml-2'>View Source Code </span>
-				</a>
+				</Link>
 			</div>
 		</footer>
 	);
