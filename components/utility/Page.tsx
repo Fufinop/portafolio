@@ -36,6 +36,45 @@ function Page({ currentPage, meta: { title, desc }, children }: PageProps) {
 				/>
 				<link rel='manifest' href='/static/favicon/site.webmanifest' />
 				{/* metatag her */}
+				{/* HTML Meta Tags  */}
+				<meta
+					name='description'
+					content='This is my personal portfolio, where I host my projects as a developer. Here you will find projects in which I have worked and used different technologies.'
+				/>
+
+				{/* Facebook Meta Tags  */}
+				<meta property='og:url' content='https://ernestodelarosa.me/' />
+				<meta property='og:type' content='website' />
+				<meta
+					property='og:title'
+					content='Ernesto De la Rosa Zamora - Full StackWeb Developer.'
+				/>
+				<meta
+					property='og:description'
+					content='This is my personal portfolio, where I host my projects as a developer. Here you will find projects in which I have worked and used different technologies.'
+				/>
+				<meta
+					property='og:image'
+					content='https://raw.githubusercontent.com/Fufinop/portafolio/main/preview.png'
+				/>
+
+				{/* Twitter Meta Tags  */}
+				<meta name='twitter:card' content='summary_large_image' />
+				<meta property='twitter:url' content='https://ernestodelarosa.me/' />
+				<meta
+					name='twitter:title'
+					content='Ernesto De la Rosa Zamora - Full StackWeb Developer.'
+				/>
+				<meta
+					name='twitter:description'
+					content='This is my personal portfolio, where I host my projects as a developer. Here you will find projects in which I have worked and used different technologies.'
+				/>
+				<meta
+					name='twitter:image'
+					content='https://raw.githubusercontent.com/Fufinop/portafolio/main/preview.png'
+				/>
+
+				{/* Meta Tags Generated via https://iplocation.io*/}
 			</Head>
 			<main className='p-5 w-full flex-1 text-center'>
 				<div className='hidden sm:block z-100'>
