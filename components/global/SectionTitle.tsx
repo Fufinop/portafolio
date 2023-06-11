@@ -4,10 +4,17 @@ type SectionTitleProps = {
 	title: string;
 };
 
+/**
+ * This is a TypeScript React component that renders a section title with responsive styling.
+ * @param {SectionTitleProps}  - The function `SectionTitle` takes in a single parameter `title` of
+ * type `SectionTitleProps`. The `title` parameter is used as the title of the section and is displayed
+ * in an `h2` element with some styling applied to it.
+ * @returns A React functional component that renders a section title with a given title prop.
+ */
 function SectionTitle({ title }: SectionTitleProps) {
 	return (
-		<div className='overflow-x-hidden w-full pt-5'>
-			<h2 className='landingSectionTitle max-w-sm md:max-w-max mx-auto md:mx-0 text-center md:text-left relative text-3xl font-bold mb-10 pt-4 md:pt-0 md:w-max'>
+		<div className='w-full overflow-x-hidden pt-5'>
+			<h2 className='landingSectionTitle relative mx-auto mb-10 max-w-sm pt-4 text-center text-3xl font-bold md:mx-0 md:w-max md:max-w-max md:pt-0 md:text-left'>
 				{title}
 			</h2>
 		</div>

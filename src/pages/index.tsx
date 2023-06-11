@@ -5,6 +5,14 @@ import Projects from '@/components/home/Projects';
 import Skills from '@/components/home/Skills';
 import Testimonials from '@/components/home/Testimonials';
 
+/**
+ * This is a default function that returns a JSX element representing the home page of a website,
+ * including a hero section, projects, skills, testimonials, and a call-to-action.
+ * @returns The `Home` component is being returned, which contains JSX elements including `Page`,
+ * `Hero`, `Projects`, `Skills`, `Testimonials`, and `CTA`. The `Page` component has props
+ * `currentPage` and `meta` which are being passed values. The `Projects`, `Skills`, and `Testimonials`
+ * components are being rendered with their respective data being passed as props.
+ */
 export default function Home() {
 	return (
 		<Page

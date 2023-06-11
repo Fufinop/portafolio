@@ -5,20 +5,23 @@ import projects from '@/data/content/projects';
 
 import ProjectCard from '../projects/ProjectCard';
 
+/* This is a functional component in React that renders a section of the website displaying a few
+favorite projects. It includes a SectionTitle component, a grid of ProjectCard components, and a
+link to view all projects. The projects data is imported from a separate file. */
 function Projects() {
 	return (
-		<div className='flex flex-col text-left justify-between pt-8 relative'>
+		<div className='relative flex flex-col justify-between pt-8 text-left'>
 			<div id='learnmore'>
 				<SectionTitle title='Here are a few of my favorite projects.' />
 			</div>
-			<div className='grid grid-cols-1 gap-12 md:gap-5 md:grid-cols-3 items-start'>
+			<div className='grid grid-cols-1 items-start gap-12 md:grid-cols-3 md:gap-5'>
 				{projects.slice(0, 3).map(item => {
 					return <ProjectCard key={item.id} project={item} />;
 				})}
 			</div>
-			<div className='relative w-full mt-2'>
+			<div className='relative mt-2 w-full'>
 				<Link href='/projects'>
-					<div className='mt-8 max-w-sm md:max-w-2xl border border-fun-pink mx-auto text-center w-full whitespace-nowrap px-8 py-3 rounded-full text-fun-pink bg-fun-pink-darkerer hover:bg-fun-pink hover:text-white transition-colors cursor-pointer'>
+					<div className='bg-fun-pink-darkerer mx-auto mt-8 w-full max-w-sm cursor-pointer whitespace-nowrap rounded-full border border-fun-pink px-8 py-3 text-center text-fun-pink transition-colors hover:bg-fun-pink hover:text-white md:max-w-2xl'>
 						View All
 					</div>
 				</Link>

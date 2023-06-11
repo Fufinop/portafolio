@@ -4,6 +4,13 @@ import Page from 'components/utility/Page';
 import Projects from 'components/designs/Designs';
 import React from 'react';
 
+/**
+ * This is a TypeScript React function that renders an "About" page with a heading, projects, and more
+ * information.
+ * @returns A JSX element that represents the About page, which includes a Page component with props
+ * for the current page and meta information, as well as child components for the heading, projects,
+ * and more information.
+ */
 function about() {
 	return (
 		<Page

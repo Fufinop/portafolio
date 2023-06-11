@@ -1,5 +1,7 @@
 import Document, { Head, Html, Main, NextScript } from 'next/document';
 
+/* This is a TypeScript React class that renders the HTML and head elements for a web page, including
+links to favicon images. */
 class MyDocument extends Document {
 	render() {
 		return (

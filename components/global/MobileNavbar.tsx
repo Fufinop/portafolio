@@ -4,6 +4,9 @@ import { routes } from '@/data/global';
 import { Link as ScrollLink } from 'react-scroll';
 import Image from 'next/image';
 
+/**
+ * This is a React component for a mobile navigation bar that toggles a menu open and closed.
+ */
 export default function MobileNavbar() {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -15,15 +18,18 @@ export default function MobileNavbar() {
 		}
 	}, [isMenuOpen]);
 
+	/**
+	 * The function toggles the state of a menu between open and closed.
+	 */
 	function toggleMenu() {
 		setIsMenuOpen(!isMenuOpen);
 	}
 
 	return (
 		<nav className='relative'>
-			<div className='flex items-center justify-between p-5 bg-bg z-10'>
+			<div className='z-10 flex items-center justify-between bg-bg p-5'>
 				<ul>
-					<li className='list-none font-bold text-lg'>
+					<li className='list-none text-lg font-bold'>
 						<Link href='/'>
 							<Image
 								alt='logo'
@@ -41,19 +47,19 @@ export default function MobileNavbar() {
 					type='button'
 					onClick={toggleMenu}>
 					{isMenuOpen ? (
-						<CrossIcon className='h-5 w-5 absolute text-gray-100' />
+						<CrossIcon className='absolute h-5 w-5 text-gray-100' />
 					) : (
-						<MenuIcon className='h-5 w-5 absolute text-gray-100' />
+						<MenuIcon className='absolute h-5 w-5 text-gray-100' />
 					)}
 				</button>
 			</div>
 			{isMenuOpen && (
-				<ul className='menu absolute inset-x-0 top-20 bg-bg z-10'>
+				<ul className='menu absolute inset-x-0 top-20 z-10 bg-bg'>
 					{routes.map(item => {
 						return (
 							<li
 								key={item.path}
-								className='border-b border-gray-900 text-gray-100 text-sm font-semibold'>
+								className='border-b border-gray-900 text-sm font-semibold text-gray-100'>
 								<ScrollLink
 									to={item.path}
 									smooth={true}
@@ -71,6 +77,13 @@ export default function MobileNavbar() {
 	);
 }
 
+/**
+ * The function returns a React component that renders a menu icon as an SVG.
+ * @param props - an object containing any additional props passed to the component, such as className
+ * or onClick.
+ * @returns A React functional component that renders an SVG icon with two horizontal lines, resembling
+ * a menu icon.
+ */
 function MenuIcon(props) {
 	return (
 		<svg
@@ -98,6 +111,13 @@ function MenuIcon(props) {
 	);
 }
 
+/**
+ * This is a TypeScript React function that returns a cross icon as an SVG element.
+ * @param props - props is an object that contains all the properties passed to the CrossIcon
+ * component. These properties can include attributes such as className, style, onClick, etc. The
+ * spread operator {...props} is used to pass all the properties to the SVG element.
+ * @returns A React component that renders an SVG icon of a cross or X shape.
+ */
 function CrossIcon(props) {
 	return (
 		<svg

@@ -3,14 +3,19 @@ import React from 'react';
 import { footer } from '@/data/global';
 import Image from 'next/image';
 
+/* This is a functional component in React that renders the footer section of a website. It uses data
+from the `footer` object in the `global` data file to dynamically generate the content of the
+footer. The footer includes links to various pages and social media accounts, as well as options to
+support the creator's work through Buy Me a Coffee and PayPal. It also includes information about
+the technologies used to build the website and a link to the source code on GitHub. */
 function Footer() {
 	return (
-		<footer className='flex flex-col w-screen px-5 py-10 border-t border-fun-pink-darker z-5 bg-bg'>
-			<div className='w-full max-w-4xl m-auto grid grid-cols-2 sm:grid-cols-3 justify-between items-start'>
+		<footer className='z-5 flex w-screen flex-col border-t border-fun-pink-darker bg-bg px-5 py-10'>
+			<div className='m-auto grid w-full max-w-4xl grid-cols-2 items-start justify-between sm:grid-cols-3'>
 				{footer.columns.map((item, index) => {
 					return (
-						<div key={index} className='text-left mb-5 sm:mb-0'>
-							<h4 className='uppercase text-fun-gray text-sm font-bold'>
+						<div key={index} className='mb-5 text-left sm:mb-0'>
+							<h4 className='text-sm font-bold uppercase text-fun-gray'>
 								{item.title}
 							</h4>
 							<div>
@@ -21,9 +26,10 @@ function Footer() {
 												<a
 													href={item.link}
 													target='_blank'
-													className='items-center flex'>
+													rel='noopener noreferrer'
+													className='flex items-center'>
 													{item.icon && (
-														<span className='pr-2 -mb-1'>
+														<span className='-mb-1 pr-2'>
 															<Image
 																src={item.icon}
 																alt='icon'
@@ -44,22 +50,22 @@ function Footer() {
 						</div>
 					);
 				})}
-				<div className='text-center col-span-2 sm:col-auto sm:text-left pt-8 sm:mt-0 sm:pt-0 text-fun-gray border-t border-fun-pink-dark sm:border-0'>
-					<h4 className='uppercase text-fun-gray text-sm font-bold text-center'>
+				<div className='col-span-2 border-t border-fun-pink-dark pt-8 text-center text-fun-gray sm:col-auto sm:mt-0 sm:border-0 sm:pt-0 sm:text-left'>
+					<h4 className='text-center text-sm font-bold uppercase text-fun-gray'>
 						Support My Work
 					</h4>
-					<div className='space-y-2 mt-4 w-full flex items-center sm:items-start flex-col'>
+					<div className='mt-4 flex w-full flex-col items-center space-y-2 sm:items-start'>
 						{footer.support.buymeacoffee !== '' && (
-							<div className='w-full flex justify-center'>
+							<div className='flex w-full justify-center'>
 								<Link
-									className='text-center flex justify-center items-center'
+									className='flex items-center justify-center text-center'
 									href={`https://buymeacoffee.com/${footer.support.buymeacoffee}`}
 									target='_blank'
 									rel='noreferrer'>
 									<Image
 										alt='Buy me a coffee'
 										src='/static/misc/buy-me-a-coffee.svg'
-										className='h-12 hover:opacity-80 opacity-100 transition-opacity mx-auto'
+										className='mx-auto h-12 opacity-100 transition-opacity hover:opacity-80'
 										width={220}
 										height={220}
 									/>
@@ -67,7 +73,7 @@ function Footer() {
 							</div>
 						)}
 						{footer.support.paypal !== '' && (
-							<div className='w-full flex justify-center'>
+							<div className='flex w-full justify-center'>
 								<Link
 									href={`https://paypal.me/${footer.support.paypal}`}
 									target='_blank'
@@ -75,24 +81,24 @@ function Footer() {
 									<Image
 										alt='Paypal'
 										src='/static/misc/paypal.svg'
-										className='h-12 hover:opacity-80 opacity-100 transition-opacity'
+										className='h-12 opacity-100 transition-opacity hover:opacity-80'
 										width={220}
 										height={220}
 									/>
 								</Link>
 							</div>
 						)}
-						<p className='text-fun-gray text-xs pt-1 text-center w-full'>
+						<p className='w-full pt-1 text-center text-xs text-fun-gray'>
 							{footer.support.message}
 						</p>
 					</div>
 				</div>
 			</div>
-			<div className='max-w-4xl w-full m-auto mt-8 pt-8 sm:mt-4 sm:pt-4 text-center text-fun-gray border-t border-fun-pink-dark'>
+			<div className='m-auto mt-8 w-full max-w-4xl border-t border-fun-pink-dark pt-8 text-center text-fun-gray sm:mt-4 sm:pt-4'>
 				<section className='flex flex-col items-center justify-center '>
-					<div className='inline-flex items-center uppercase text-xs font-bold tracking-widest'>
+					<div className='inline-flex items-center text-xs font-bold uppercase tracking-widest'>
 						Made with{' '}
-						<div className='space-x-2 inline-flex items-center -mt-1 ml-3'>
+						<div className='-mt-1 ml-3 inline-flex items-center space-x-2'>
 							<span>
 								<Image
 									alt='React'
@@ -130,17 +136,17 @@ function Footer() {
 						Made by{' '}
 						<a
 							href='mailto:ernestodelazamora@gmail.com'
-							className='text-fun-gray-light font-medium'>
+							className='font-medium text-fun-gray-light'>
 							Fufinop
 						</a>
 						. All rights reserved.
 					</div>
 				</section>
 			</div>
-			<div className='mt-8 text-center sm:text-right sm:-mt-12'>
+			<div className='mt-8 text-center sm:-mt-12 sm:text-right'>
 				<Link
-					className='w-auto inline-flex items-center sm:w-auto font-bold flex-shrink text-xs border border-fun-pink px-4 py-2 rounded-xl text-fun-pink cursor-pointer opacity-50'
-					href='https://github.com/Fufinop/Fufinop.github.io'
+					className='inline-flex w-auto shrink cursor-pointer items-center rounded-xl border border-fun-pink px-4 py-2 text-xs font-bold text-fun-pink opacity-50 sm:w-auto'
+					href='https://github.com/Fufinop/portafolio'
 					target='_blank'
 					rel='nooreferrer'>
 					<Image

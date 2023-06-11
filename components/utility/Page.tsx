@@ -4,6 +4,16 @@ import MobileNavbar from '../global/MobileNavbar';
 import Navbar from '../global/Navbar';
 import React from 'react';
 
+/**
+ * This is a TypeScript React function that renders a page with a title, description, navigation bar,
+ * content, and footer.
+ * @param {PageProps}  - - `currentPage`: a string representing the current page being rendered
+ * @returns The Page component is being returned, which is a React functional component that renders a
+ * page with a title, description, navigation bar, content, and footer. The title and description are
+ * set based on the current page, and meta tags are included for search engine optimization and social
+ * media sharing. The navigation bar is either a desktop or mobile version depending on the screen
+ * size, and the content is passed as children
+ */
 function Page({ currentPage, meta: { title, desc }, children }: PageProps) {
 	const pageTitle = `${
 		currentPage === 'Home'
@@ -12,7 +22,7 @@ function Page({ currentPage, meta: { title, desc }, children }: PageProps) {
 	}`;
 	return (
 		<div
-			className='w-full m-auto flex flex-col items-center justify-center min-h-screen opening-box-animate-paddin text-white overflow-hidden md:overflow-visible'
+			className='opening-box-animate-paddin m-auto flex min-h-screen w-full flex-col items-center justify-center overflow-hidden text-white md:overflow-visible'
 			style={{ maxWidth: '1200px' }}>
 			<Head>
 				<title>{pageTitle}</title>
@@ -76,11 +86,11 @@ function Page({ currentPage, meta: { title, desc }, children }: PageProps) {
 
 				{/* Meta Tags Generated via https://iplocation.io*/}
 			</Head>
-			<main className='p-5 w-full flex-1 text-center'>
-				<div className='hidden sm:block z-100'>
+			<main className='w-full flex-1 p-5 text-center'>
+				<div className='z-100 hidden sm:block'>
 					<Navbar currentPage={currentPage} />
 				</div>
-				<div className='-m-5 block sm:hidden z-100'>
+				<div className='z-100 -m-5 block sm:hidden'>
 					<MobileNavbar />
 				</div>
 				{children}
