@@ -11,7 +11,8 @@ function More() {
 			<a
 				className='text-fun-pink underline'
 				href='https://github.com/Fufinop/portafolio'
-				target='_blank'>
+				target='_blank'
+				rel='noopener noreferrer'>
 				my Dribbble
 			</a>
 			!

@@ -62,7 +62,7 @@ export default function MobileNavbar() {
 								className='border-b border-gray-900 text-sm font-semibold text-gray-100'>
 								<ScrollLink
 									to={item.path}
-									smooth={true}
+									smooth
 									duration={500}
 									onClick={toggleMenu}
 									className='block w-full py-4 px-6'>
